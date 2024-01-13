@@ -2,8 +2,6 @@ CXXFLAGS =
 
 CXXINCLUDES = 
 
-all: main.exe doc
-
 main.exe: main.o
 	g++ $(CXXFLAGS) -o main.exe main.o
 
@@ -17,3 +15,5 @@ clean:
 
 doc:
 	doxygen Doxyfile
+
+all: main.exe doc

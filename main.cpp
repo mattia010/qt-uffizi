@@ -3,6 +3,16 @@
 
 #include "set.hpp"
 
+void test_add_remove() {
+    Set<int> tmp;
+    for (int i = 0; i < 100; ++i) {
+        tmp.add(i);
+    }
+    for (int i = 0; i < 90; ++i) {
+        tmp.remove(i);
+    }
+}
+
 bool test_add_int() {
     Set<int> tmp;
     tmp.add(21);
@@ -263,6 +273,8 @@ int main() {
     std::cout << "test_concatenation: " << test_concatenation() << std::endl;
     std::cout << "test_intersection: " << test_intersection() << std::endl;
     
+    test_add_remove(); //per verificare se ci sono memory leak con valgrind
+
     test_print_operator();
 
     test_save();
